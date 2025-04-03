@@ -17,21 +17,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Menu toggle - versión corregida
+    // Enhanced menu toggle with fade in/out and slide effects
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
     menuToggle.addEventListener('click', function() {
         if (navLinks.classList.contains('active')) {
-            // Añadir clase de animación para cerrar
+            // Add closing animation class (fade out and slide up)
             navLinks.classList.add('closing');
             
-            // Esperar a que termine la animación antes de quitar 'active'
+            // Wait for animation to complete before removing 'active'
             setTimeout(function() {
                 navLinks.classList.remove('active');
                 navLinks.classList.remove('closing');
-            }, 500); // 500ms debe coincidir con la duración de la animación
+            }, 500); // Match your CSS animation duration
         } else {
+            // Add active class to show menu (fade in and slide down)
             navLinks.classList.add('active');
         }
     });
@@ -64,6 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Rest of your existing code...
+    // Back to top button, testimonial slider, video player, stats counter...
     
     // Back to top button click
     const backToTop = document.querySelector('.back-to-top');
